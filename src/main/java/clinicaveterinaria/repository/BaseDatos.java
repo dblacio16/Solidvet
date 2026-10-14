@@ -55,17 +55,4 @@ public class BaseDatos implements IBaseDatos {
         return auditoria;
     }
 
-    public double calcularIngresosMensual() {
-        double total = 0;
-        int mesActual = LocalDate.now().getMonthValue();
-        int anioActual = LocalDate.now().getYear();
-        for (Factura factura : facturas) {
-            if (factura.isPagada()
-                    && factura.getFecha().getMonthValue() == mesActual
-                    && factura.getFecha().getYear() == anioActual) {
-                total += factura.getMonto();
-            }
-        }
-        return total;
-    }
 }

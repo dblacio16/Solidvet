@@ -4,7 +4,6 @@ import clinicaveterinaria.model.*;
 import clinicaveterinaria.repository.*;
 import clinicaveterinaria.service.*;
 
-
 import java.time.LocalDate;
 
 public class Main {
@@ -41,15 +40,18 @@ public class Main {
         System.out.println("Mascotas de Ana Perez: " + reporteService.generarReporteMascotasPorDueno("Ana Perez").size());
         System.out.println("Ingresos del mes: " + reporteService.calcularIngresosMensual());
 
-        demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento);
+        // Se pasan los servicios necesarios por parámetro para no usar los métodos eliminados del Veterinario
+        demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento, reservaService, diagnosticoService);
         new Clinica().agendarConsultaRapida(mascota, veterinario);
         new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
     }
 
-    private static void demostrarViolacionesSinRomperEjecucion(Veterinario veterinario, Mascota mascota, Tratamiento tratamiento) {
-        Cita citaDesdeModelo = veterinario.reservarCita(2, mascota, LocalDate.now().plusDays(1));
-        veterinario.diagnosticar(citaDesdeModelo, "Ejemplo de SRP violado desde el modelo.");
-        System.out.println(veterinario.crearReporte(citaDesdeModelo));
+    private static void demostrarViolacionesSinRomperEjecucion(Veterinario veterinario, Mascota mascota, Tratamiento tratamiento, ReservaService reservaService, DiagnosticoService diagnosticoService) {
+        
+        // SRP corregido integrante 1
+        Cita citaDesdeModelo = reservaService.reservarCita(2, mascota, veterinario, LocalDate.now().plusDays(1));
+        diagnosticoService.diagnosticar(citaDesdeModelo, "Ejemplo de SRP corregido usando servicios.");
+        System.out.println("Reporte: " + veterinario.getNombre() + " atendio a " + citaDesdeModelo.getMascota().getNombre() + " con diagnostico " + citaDesdeModelo.getDiagnostico());
 
         Animal pez = new Pez(3, "Nemo");
         pez.nadar();
