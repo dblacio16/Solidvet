@@ -21,4 +21,28 @@ public class DirectoVeterinario implements IVeterinarioService {
         cita.setDiagnostico(diagnostico);
         cita.setEstado(EstadoCita.ATENDIDA);
     }
+
+    @Override
+    public void crearVeterinario(Veterinario veterinario) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearVeterinario'");
+    }
+
+    @Override
+    public Veterinario obtenerVeterinario(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerVeterinario'");
+    }
+
+    @Override
+    public void actualizarVeterinario(Veterinario veterinario) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actualizarVeterinario'");
+    }
+
+    @Override
+    public void eliminarVeterinario(int id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'eliminarVeterinario'");
+    }
 }

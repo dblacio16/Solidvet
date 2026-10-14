@@ -1,5 +1,6 @@
 package clinicaveterinaria.service;
 
+import clinicaveterinaria.interfaces.IBaseDatos;
 import clinicaveterinaria.repository.BaseDatos;
 
 public class GestorReportesClinica {
@@ -10,7 +11,13 @@ public class GestorReportesClinica {
         this.baseDatos = baseDatos;
     }
 
-    public void imprimirResumenOperaciones() {
-        System.out.println("Resumen interno: " + baseDatos.getAuditoria());
-    }
+//Inyección por constructor
+public GestorReportesClinica(IBaseDatos baseDatos) {
+this.baseDatos = (BaseDatos) baseDatos;
+}
+
+public void imprimirResumenOperaciones() {
+
+System.out.println("Resumen interno: Operaciones de reportes solicitadas al sistema.");
+}
 }
