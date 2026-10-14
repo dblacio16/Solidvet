@@ -13,7 +13,7 @@ private final IVeterinarioService veterinarioService;
 private final IBaseDatos baseDatos;
 
 
-public Clinica(IVeterinarioService veterinarioService, IBaseDatos baseDatos) {
+public Clinica() {
 this.veterinarioService = veterinarioService;
 this.baseDatos = baseDatos;
 }
