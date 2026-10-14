@@ -18,3 +18,9 @@ Se identificó que la clase modelo `Veterinario.java` violaba el principio SRP a
   Obtenemos alta cohesión y bajo acoplamiento. Ahora el modelo de datos es reutilizable en cualquier parte del sistema sin arrastrar lógicas pesadas. Además, la lógica de negocio vive en servicios aislados, lo que facilita las pruebas unitarias y el mantenimiento.
 * **¿Qué clase debería cambiar si mañana cambia el formato del reporte?**
   Solamente `ReporteService` (la lógica del reporte) o la clase encargada de la vista (`GestorReportesClinica`). El modelo `Veterinario` y `BaseDatos` permanecerán intactos y cerrados a este cambio.
+¿Por qué los condicionales repetidos hacen más caro el cambio?
+La addicion de bucles por cada tratamiento genera cambios de mas.
+- ¿Qué pasaría si agregamos `Odontologia` como tratamiento?
+- Se agrega su clase propia.
+- ¿Cuándo una interfaz ayuda a extender el sistema?
+- Un caso para evitar el uso excesivo de switch.
