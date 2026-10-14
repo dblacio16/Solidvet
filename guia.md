@@ -285,8 +285,11 @@ Checklist de validación:
 Preguntas de discusión:
 
 - ¿Qué problema causa una interfaz gigante en equipos grandes?
+- Genera cuellos de botella y conflictos al fusionar el código. Además, obliga a otras clases a implementar métodos inútiles, y cualquier cambio pequeño requiere recompilar gran parte del sistema.
 - ¿Por qué `new DirectoBaseDatos()` dificulta cambiar o probar la clase?
+- Porque crea un acoplamiento fuerte. Te impide inyectar bases de datos de prueba (mocks) para hacer testing, y te obliga a alterar el código interno si decides cambiar de motor de base de datos en el futuro.
 - ¿Qué dependencia debería conocer el código de alto nivel: interfaz o clase concreta?
+- Siempre una interfaz (abstracción). Esto permite que el código sea flexible y puedas intercambiar implementaciones concretas sin modificar la lógica principal de negocio.
 
 ## Checklist de validación general
 
