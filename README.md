@@ -24,3 +24,20 @@ La addicion de bucles por cada tratamiento genera cambios de mas.
 - Se agrega su clase propia.
 - ¿Cuándo una interfaz ayuda a extender el sistema?
 - Un caso para evitar el uso excesivo de switch.
+##integrante3:LSP
+Checklist de validación:
+
+| Criterio | Sí/No |
+| --- | --- |
+| El proyecto compila |Si |
+| Ningún animal implementa acciones imposibles |si |
+| No hay `UnsupportedOperationException` por capacidades naturales |si |
+| El código cliente usa la interfaz correcta según la acción | si|
+
+Preguntas de discusión:
+
+- ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?
+    porque viola el principio de LSP ya que el sistema no deberia reporse cuando una subclase esta siendo sustituida
+- ¿Qué contrato estaba prometiendo `Animal`? se rompia el contrato de que cada unimal creado tendria capacidades como volar nadar y caminar pero no todo animal en realidad posee de estas avalidades.
+- ¿Cómo cambia el diseño cuando modelamos capacidades en lugar de herencia amplia?
+pasa de un modelo basado en herencia a un modelo basado en lo que el objeto puede hacer 
