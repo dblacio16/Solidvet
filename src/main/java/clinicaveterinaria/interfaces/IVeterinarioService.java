@@ -10,4 +10,12 @@ public interface IVeterinarioService {
     Cita reservarCita(Mascota mascota, Veterinario veterinario, LocalDate fecha);
 
     void diagnosticar(Cita cita, String diagnostico);
+
+    void crearVeterinario(Veterinario veterinario);
+
+    Veterinario obtenerVeterinario(int id);
+
+    void actualizarVeterinario(Veterinario veterinario);
+
+    void eliminarVeterinario(int id);
 }
