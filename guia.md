@@ -196,7 +196,7 @@ Tarea:
 
 Crear una jerarquía correcta con interfaces segmentadas:
 
-- `Caminador`
+- `Caminador` 
 - `Nadador`
 - `Volador`
 

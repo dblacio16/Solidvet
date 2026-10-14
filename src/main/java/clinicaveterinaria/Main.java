@@ -53,9 +53,11 @@ public class Main {
         diagnosticoService.diagnosticar(citaDesdeModelo, "Ejemplo de SRP corregido usando servicios.");
         System.out.println("Reporte: " + veterinario.getNombre() + " atendio a " + citaDesdeModelo.getMascota().getNombre() + " con diagnostico " + citaDesdeModelo.getDiagnostico());
 
-        Animal pez = new Pez(3, "Nemo");
-        pez.nadar();
-        System.out.println("El pez heredó caminar() y volar(), aunque no debe usarlos.");
+        Pez pez = new Pez(3, "Nemo");
+        pez.nadar(); 
+        System.out.println("El pez implementa solo su interfaz correspondiente de forma correcta y cumple con Liskov.");
         System.out.println("Tratamiento OCP violado pero funcional: " + tratamiento.obtenerIndicaciones());
     }
 }
+
+
