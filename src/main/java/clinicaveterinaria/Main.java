@@ -1,5 +1,4 @@
 package clinicaveterinaria;
-
 import clinicaveterinaria.model.*;
 import clinicaveterinaria.repository.*;
 import clinicaveterinaria.service.*;
@@ -19,7 +18,7 @@ public class Main {
 
         Mascota mascota = new Mascota(1, "Luna", TipoAnimal.PERRO, 4, "Ana Perez");
         Veterinario veterinario = new Veterinario(1, "Dr. Ruiz", "Medicina general", true);
-        Tratamiento tratamiento = new Tratamiento(1, TipoTratamiento.CIRUGIA, "Esterilizacion", 120.0);
+        Tratamiento tratamiento = new Tratamiento(1, "Esterilizacion", 120.0, new CirugiaTratamiento(120.0));
 
         mascotaService.crearMascota(mascota);
         veterinarioCrudService.crearVeterinario(veterinario);
@@ -42,7 +41,7 @@ public class Main {
 
         // Se pasan los servicios necesarios por parámetro para no usar los métodos eliminados del Veterinario
         demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento, reservaService, diagnosticoService);
-        new Clinica().agendarConsultaRapida(mascota, veterinario);
+        new Clinica(new DirectoVeterinario(), new DirectoBaseDatos()).agendarConsultaRapida(mascota, veterinario);
         new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
     }
 
@@ -56,8 +55,7 @@ public class Main {
         Pez pez = new Pez(3, "Nemo");
         pez.nadar(); 
         System.out.println("El pez implementa solo su interfaz correspondiente de forma correcta y cumple con Liskov.");
-        System.out.println("Tratamiento OCP violado pero funcional: " + tratamiento.obtenerIndicaciones());
-    }
+        System.out.println("Tratamiento OCP aplicado: " + tratamiento.obtenerIndicaciones());
 }
-
+}
 

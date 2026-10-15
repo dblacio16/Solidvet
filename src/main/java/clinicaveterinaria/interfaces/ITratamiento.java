@@ -10,4 +10,8 @@ public interface ITratamiento {
     void crearTratamiento(Tratamiento tratamiento);
 
     double calcularTratamiento(Tratamiento tratamiento);
+
+    String prepararSala();
+
+    double calcularConImpuestos();
 }
