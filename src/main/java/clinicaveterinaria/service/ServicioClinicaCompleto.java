@@ -124,25 +124,37 @@ return reporteService.calcularIngresosMensual();
 
 @Override
 public double calcularCostoFinal() {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'calcularCostoFinal'");
 }
 
 @Override
 public String obtenerIndicaciones() {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'obtenerIndicaciones'");
 }
 
 @Override
 public Cita reservarCita(Mascota mascota, Veterinario veterinario, LocalDate fecha) {
-    // TODO Auto-generated method stub
+ 
     throw new UnsupportedOperationException("Unimplemented method 'reservarCita'");
 }
 
 @Override
 public void diagnosticar(Cita cita, String diagnostico) {
-    // TODO Auto-generated method stub
+    
     throw new UnsupportedOperationException("Unimplemented method 'diagnosticar'");
+}
+
+@Override
+public String prepararSala() {
+    
+    throw new UnsupportedOperationException("Unimplemented method 'prepararSala'");
+}
+
+@Override
+public double calcularConImpuestos() {
+    
+    throw new UnsupportedOperationException("Unimplemented method 'calcularConImpuestos'");
 }
 }
